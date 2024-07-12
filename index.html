@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Randomizer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.1/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title has-text-centered">Team Randomizer</h1>
+        <div class="field">
+          <input
+            type="checkbox"
+            id="hasLeaders"
+            onclick="toggleLeadersInput()"
+          />
+          <label class="checkbox" for="hasLeaders">Include Leaders</label>
+        </div>
+        <div class="field" id="leadersField" style="display: none">
+          <label class="label">Leader Names</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              id="leadersInput"
+              placeholder="Enter leader names, separated by commas"
+            ></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Participant Names</label>
+          <div class="control">
+            <textarea
+              class="textarea"
+              id="namesInput"
+              placeholder="Enter names, separated by commas"
+            ></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Number of Teams</label>
+          <div class="control">
+            <input
+              class="input"
+              type="number"
+              id="numTeams"
+              placeholder="Number of teams"
+              min="1"
+            />
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary" onclick="randomizeTeams()">
+              Randomize
+            </button>
+          </div>
+          <div class="control">
+            <button class="button is-light" onclick="resetForm()">Reset</button>
+          </div>
+        </div>
+        <div id="teamsOutput" class="columns is-multiline"></div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
