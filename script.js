@@ -51,7 +51,7 @@ function randomizeTeams() {
   const numTeams = parseInt(document.getElementById("numTeams").value);
 
   if (!namesInput || !numTeams || numTeams < 1) {
-    alert("Please enter valid names and number of teams.");
+    alert("Tolong masukkan nama dan jumlah kelompok yang vaild.");
     return;
   }
 
@@ -62,7 +62,7 @@ function randomizeTeams() {
       .map((name) => name.trim())
       .filter((name) => name);
     if (leaders.length !== numTeams) {
-      alert("The number of leaders must match the number of teams.");
+      alert("Jumlah ketua harus sama dengan jumlah kelompok.");
       return;
     }
   }
@@ -101,15 +101,15 @@ function displayTeams(teams, hasLeaders) {
     const teamDiv = document.createElement("div");
     teamDiv.className = "team column is-one-third";
     teamDiv.innerHTML = `
-            <h2 class="title is-4">Team ${index + 1}</h2>
+            <h2 class="title is-4">Kelompok ${index + 1}</h2>
             ${
               hasLeaders
-                ? `<p><strong>Leader:</strong> ${
+                ? `<p><strong>Ketua:</strong> ${
                     team[0]
-                  }</p><p><strong>Members:</strong> ${team
+                  }</p><p><strong>Anggota:</strong> ${team
                     .slice(1)
                     .join(", ")}</p>`
-                : `<p><strong>Members:</strong> ${team.join(", ")}</p>`
+                : `<p><strong>Anggota:</strong> ${team.join(", ")}</p>`
             }
         `;
     teamsOutput.appendChild(teamDiv);
