@@ -1,3 +1,14 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1,
+h2,
+.label,
+.button {
+  font-family: "Quicksand", sans-serif;
+}
+
 #teamsOutput .team {
   padding: 20px;
   border-radius: 8px;
